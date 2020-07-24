@@ -8,6 +8,8 @@ export const store = new Vuex.Store({
         count:2,
         btnEdit:'add',
         temp:'',
+        titleTemp:' ',
+        test : 'g',
         todos:[
             {
                 id:1,
@@ -39,6 +41,12 @@ export const store = new Vuex.Store({
         },
         setTempId(state,todo){
             state.temp=todo
+        },
+        changeTitle(state,todo){
+            state.titleTemp =  todo.title
+        },
+        test(state,txt){
+            state.test = txt
         }
     }
 })

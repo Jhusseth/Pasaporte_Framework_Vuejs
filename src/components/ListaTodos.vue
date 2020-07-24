@@ -21,7 +21,7 @@
             </td>
             <td>
               <div v-if="todo.prop">
-                <button type="button" class="btn btn-warning" v-on:click="editTodo(todo)"> edit </button>         
+                <button type="button" class="btn btn-warning" v-on:click="editTodo(todo)"> editing </button>         
               </div>
               <div v-else>
                 <button type="button" class="btn btn-primary" v-on:click="editTodo(todo)"> edit </button>
@@ -56,6 +56,7 @@
       editTodo: function(todo){
         this.$store.commit('btnChange')
         todo.prop = true
+        this.$store.commit('changeTitle',todo)
         this.$store.commit('setTempId',todo)
       }
     },
